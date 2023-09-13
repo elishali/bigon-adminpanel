@@ -19,7 +19,7 @@ namespace Bigon.WebUI
             app.UseStaticFiles();
             app.UseRouting();
             app.UseEndpoints(cfg => {
-            cfg.MapControllerRoute("default","{controller=home}/{axtion=index}/{id?}");
+            cfg.MapControllerRoute("default","{controller=home}/{action=index}/{id?}");
             });
            
 
