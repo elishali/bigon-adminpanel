@@ -9,6 +9,7 @@ namespace Bigon.WebUI
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
+           
             builder.Services.AddDbContext<DataContext>(cfg =>
             {
                 cfg.UseSqlServer(builder.Configuration.GetConnectionString("cString"),
@@ -18,12 +19,14 @@ namespace Bigon.WebUI
                     });
             });
 
+            builder.Services.AddRouting(cfg => cfg.LowercaseUrls = true);
+
             var app = builder.Build();
 
             app.UseStaticFiles();
             app.UseRouting();
             app.UseEndpoints(cfg => {
-            cfg.MapControllerRoute("default","{controller=home}/{axtion=index}/{id?}");
+            cfg.MapControllerRoute("default","{controller=home}/{action=index}/{id?}");
             });
            
 
