@@ -680,35 +680,7 @@ for (var attr in meta) {
         </div>
         <!-- Header Middle Menu Start -->
         <div class="middle-menu hidden-xs hidden-sm pull-right">
-          <nav>
-  <ul class="middle-menu-list">
-    
-    
-    
-    <li>
-        <a asp-controller="home" asp-action="index">Home</a>
-    </li>
-
-    
-    <li><a asp-controller="home" asp-action="about">about us</a></li>
-
-    
-    <li><a asp-controller="home" asp-action="contact">contact us</a></li>
-
-    
-    <li>
-        <a asp-controller="Blogs" asp-action="index">blog</a>
-    </li>
-
-    
-    <li>
-        <a asp-controller="Shop" asp-action="index">shop</a>
-    </li>
-
-  </ul>
-</nav>
-
-
+<partial name="_Navbar"/>
 <script>
   
   jQuery('.middle-menu-list .megamenu-three-column').parent('ul').addClass('megamenu');
